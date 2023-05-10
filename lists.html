@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            margin: 0 auto;
+            width: 400px;
+        }
+        .spacer {
+            margin-right: 40px;
+        }
+        tr,th,td {
+            margin-right: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <table border="1">
+        <thead>
+            <tr>
+                <th class="spacer">First Name</th>
+                <th class="spacer">Last Name</th>
+                <th class="spacer">Full Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{user['first_name']}}</td>
+                    <td>{{user['last_name']}}</td>
+                    <td>{{user['first_name']}} {{user['last_name']}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>
